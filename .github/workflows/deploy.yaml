@@ -12,15 +12,15 @@ jobs:
               with:
                   username: ${{ secrets.DOCKER_USERNAME }}
                   password: ${{ secrets.DOCKER_PASSWORD }}
-            - run: docker build -t ovidiuradoi/react-test -f ./client/Dockerfile.dev ./client
-            - run: docker run -e CI=true ovidiuradoi/react-test npm test
+            - run: docker build -t ovidiuradoi03/react-test -f ./client/Dockerfile.dev ./client
+            - run: docker run -e CI=true ovidiuradoi03/react-test npm test
 
-            - run: docker build -t ovidiuradoi/multi-client ./client
-            - run: docker build -t ovidiuradoi/multi-nginx ./nginx
-            - run: docker build -t ovidiuradoi/multi-server ./server
-            - run: docker build -t ovidiuradoi/multi-worker ./worker
+            - run: docker build -t ovidiuradoi03/multi-client ./client
+            - run: docker build -t ovidiuradoi03/multi-nginx ./nginx
+            - run: docker build -t ovidiuradoi03/multi-server ./server
+            - run: docker build -t ovidiuradoi03/multi-worker ./worker
 
-            - run: docker push ovidiuradoi/multi-client
-            - run: docker push ovidiuradoi/multi-nginx
-            - run: docker push ovidiuradoi/multi-server
-            - run: docker push ovidiuradoi/multi-worker
+            - run: docker push ovidiuradoi03/multi-client
+            - run: docker push ovidiuradoi03/multi-nginx
+            - run: docker push ovidiuradoi03/multi-server
+            - run: docker push ovidiuradoi03/multi-worker
